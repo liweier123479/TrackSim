@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FF1A1D24">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.example.tracksim.MapCanvasView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/hintText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_margin="12dp"
+            android:background="#D214171E"
+            android:padding="8dp"
+            android:textColor="#FF8B93A1"
+            android:textSize="12sp"
+            android:lineSpacingExtra="3dp"
+            android:text="点按地图添加路径点 · 拖动移动点 · 长按删除点\n依次点出起点 → 途经点 → 终点" />
+
+        <TextView
+            android:id="@+id/badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_margin="12dp"
+            android:background="#D214171E"
+            android:padding="6dp"
+            android:textColor="#FF8B93A1"
+            android:textSize="11sp"
+            android:text="未开始" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FF1E222B"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="6dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="速度"
+                android:textColor="#FF8B93A1"
+                android:textSize="13sp"
+                android:layout_marginEnd="10dp" />
+
+            <SeekBar
+                android:id="@+id/speedSeek"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="70"
+                android:progress="20" />
+
+            <TextView
+                android:id="@+id/speedText"
+                android:layout_width="82dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="5.0 km/h"
+                android:textColor="#FF4DABF7"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="6dp">
+
+            <CheckBox
+                android:id="@+id/loopCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="首尾相连"
+                android:textColor="#FFC3CAD6"
+                android:textSize="13sp" />
+
+            <CheckBox
+                android:id="@+id/dirCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:checked="true"
+                android:text="显示方向"
+                android:textColor="#FFC3CAD6"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/playBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="▶ 开始"
+                android:textColor="#FFFFFFFF"
+                android:backgroundTint="#FF2F7FD4"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/undoBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="撤销"
+                android:textColor="#FFC3CAD6"
+                android:backgroundTint="#FF272C37"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/clearBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="清空"
+                android:textColor="#FFC3CAD6"
+                android:backgroundTint="#FF272C37"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/statText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="#FF7B8494"
+            android:textSize="11sp"
+            android:lineSpacingExtra="3dp"
+            android:text="就绪" />
+    </LinearLayout>
+</LinearLayout>
